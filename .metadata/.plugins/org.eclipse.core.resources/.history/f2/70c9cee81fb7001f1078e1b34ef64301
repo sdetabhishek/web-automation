@@ -1,0 +1,154 @@
+package clraivate;
+
+import java.time.Duration;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Cuestions {
+
+	public static void main(String[] args) {
+
+//		System.out.println(count("aaaaaabbbbbcccddd", 'd'));
+		
+		System.out.println(numCount());
+
+	}
+
+	public static int count(String s, char c) {
+
+		int count = 0;
+
+		for (int i = 0; i < s.length(); i++) {
+
+			if (s.charAt(i) == c)
+				count++;
+			
+			
+		}
+
+		return count++;
+
+	}
+	
+	
+	public static int numCount() {
+		
+		String s = "abcdree10sewe5hhsh4jdj3";
+		
+		int res = 0;
+		
+	        char[] ch = s.toCharArray();
+	        
+	        for(char c: ch){
+	        	
+	        	
+	        	
+	        	res = res+c;
+	        	
+	        	System.out.println(res);
+	        	
+	        	
+	        	
+	        }
+			return res;
+	        
+	      
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	
+	wait.until(ExpectedConditions.)
+	
+	
+	Fluent<Wait> wait = FluentWait<WebElement, WebDriver>()
+	
+	.pollingEvery(Duration.ofSecond(2))
+	.timeout(Duration.ofSeconds())
+	.ignoreNoSuchElementExpection();
+	
+	WebElement element = wait(Exception){
+		
+		public 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	WebElement popup_window = driver.findElements(....);
+	
+	           Set<String> all_popup = popup_window.getWindowHandles();
+	           
+	           while(all_popup.hasNext()) {
+	        	   
+	        	  Interator<String> it = all_popup.interator();
+	        	  
+	        	  System.out.println(it);
+	        	  
+	        	  String parent = it.getText();
+	        	  String child = it.getText();
+	        	 
+	        	  
+	        	  driver.switchTo(child);
+	        	  
+	        	  driver.switchTo(parent);
+	        	  
+	        	  
+	        	  
+	           }
+	           
+	           pubclic Screebhotname(String filenAME)
+	           
+	           File src = ((TakesScreenshot)driver).getOutputAs(outoutType.File);
+	           
+	           File des = FileUtils.copyFile(src, new File("FrameworkPath" + "fileName" + ".format"));
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

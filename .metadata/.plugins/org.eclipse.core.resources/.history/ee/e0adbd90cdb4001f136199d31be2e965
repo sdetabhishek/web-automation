@@ -1,0 +1,32 @@
+package launcher;
+
+public class Arrays {
+
+	public static void main(String[] args) {
+
+		printArray();
+		
+	}
+	
+	
+	static void printArray() {
+		
+		
+		int arr[] = new int[] {10,20,30,40,50};
+		
+		System.out.println(arr.length);
+		
+		int i=0;
+		
+		for (int item : arr) {
+			
+			System.out.println(item + " " +i);
+			
+			i++;
+			
+		}
+		
+		
+	}
+
+}

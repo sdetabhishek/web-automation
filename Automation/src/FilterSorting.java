@@ -14,8 +14,7 @@ import org.testng.annotations.Test;
 public class FilterSorting {
 
 	@Test
-
-	public void filterSorting() {
+    public void filterSorting() {
 
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\1118a\\Eclipse-Automation\\Automation\\Drivers\\chromedriver.exe");
@@ -64,6 +63,75 @@ public class FilterSorting {
 		
 		Assert.assertEquals(numericPriceBeforeFilter, numericPriceAfterFilter);
 		
+		driver.quit();
+		
 
 	}
+	
+	
+	@Test
+    public void reverseSorting() {
+
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\1118a\\Eclipse-Automation\\Automation\\Drivers\\chromedriver.exe");
+
+		WebDriver driver = new ChromeDriver();
+
+		driver.manage().window().maximize();
+
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+
+		driver.get("https://www.saucedemo.com/");
+
+		driver.findElement(By.id("user-name")).sendKeys("standard_user");
+		driver.findElement(By.id("password")).sendKeys("secret_sauce");
+		driver.findElement(By.id("login-button")).click();
+
+		// PRODUCT BEFORE FILTER
+
+		List<WebElement> priceBeforeFilter = driver.findElements(By.className("inventory_item_price"));
+
+		List<Double> numericPriceBeforeFilter = new ArrayList<Double>();
+
+		for (WebElement p : priceBeforeFilter) {
+
+			numericPriceBeforeFilter.add(Double.valueOf(p.getText().replace("$", "")));
+
+		}
+
+		Collections.sort(numericPriceBeforeFilter);
+		Collections.reverse(numericPriceBeforeFilter);
+		
+		
+		for (Double double1 : numericPriceBeforeFilter) {
+			
+			System.out.println(double1);
+			
+		}
+		
+		
+		Select dropdown = new Select(driver.findElement(By.className("product_sort_container")));
+		dropdown.selectByVisibleText("Price (high to low)");
+		
+		
+		List<WebElement> priceAfterFilter = driver.findElements(By.className("inventory_item_price"));
+
+		List<Double> numericPriceAfterFilter = new ArrayList<Double>();
+
+		for (WebElement q : priceAfterFilter) {
+
+			numericPriceAfterFilter.add(Double.valueOf(q.getText().replace("$", "")));
+
+		}
+		
+		
+		Assert.assertEquals(numericPriceBeforeFilter, numericPriceAfterFilter);
+		
+		driver.quit();
+		
+
+	}
+		
+		
+		
 }
